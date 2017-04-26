@@ -184,6 +184,27 @@
 	padding-right: 15px;
 }
 
+.u-taLeft{
+	text-align: left;
+}
+
+.u-ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+
+	li{
+		color: $mercury;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 1.8px;
+    line-height: 1.4;
+
+    @include MQ(M){
+      font-size: 16px;
+    }
+	}
+}
 
 
 
@@ -211,7 +232,7 @@
 /* checkbox aspect */
 [type="checkbox"]:not(:checked) + label:before,
 [type="checkbox"]:checked + label:before {
-	height: 40px;
+	height: 36px;
 	top: 0;
   background: transparent;
   border: 2px solid $silver;
@@ -219,19 +240,19 @@
   content: '';
   left: 0; 
   position: absolute;
-  width: 40px; 
+  width: 36px; 
 }
 /* checked mark aspect */
 [type="checkbox"]:not(:checked) + label:after,
 [type="checkbox"]:checked + label:after {
-  content: '✔';
-  position: absolute;
-  top: 0; 
-	left: 8px;
-  font-size: 30px;
-  line-height: 40px;
-  color: $fuel-yellow;
-  transition: all .2s;
+	color: $fuel-yellow;
+	content: '✔';
+	font-size: 26px;
+	left: 7px;
+	line-height: 36px;
+	position: absolute;
+	top: 0; 
+	transition: all .2s;
 }
 [type="checkbox"]:checked + label:before{
 	border-color: $fuel-yellow;

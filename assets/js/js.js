@@ -42,6 +42,7 @@ $(function(){
 
   // validar formulario
   $('.js-submitForm').on('click', function (e) {
+    var form = $(this).attr('id');
 
     e.preventDefault();
     var qtdErro = 0;
@@ -55,22 +56,40 @@ $(function(){
     });
 
     if (qtdErro == 0) {
-      return $.ajax({
-        type: "POST",
-        url: "/ajax/contato.php",
-        data: $(this).serialize(),
-        success: function (data) {
-          if (data === "success") {
-            console.log('Mensagem enviada com sucesso.');
-            // Limpa o form
-            $('.Form').trigger("reset");
-          } else {
-            console.log('Erro ao tentar enviar mensagem: ' + data);
+      // financiamento
+      if(form == 'formInteresse'){
+        return $.ajax({
+          type: "POST",
+          url: "/ajax/interesse.php",
+          data: $(this).serialize(),
+          success: function (data) {
+            if (data === "success") {
+              console.log('Mensagem enviada com sucesso.');
+              // Limpa o form
+              $('.Form').trigger("reset");
+            } else {
+              console.log('Erro ao tentar enviar mensagem: ' + data);
+            }
           }
-        }
-      });
+        });
+      } else if(form == 'formProposta'){
+        return $.ajax({
+          type: "POST",
+          url: "/ajax/proposta.php",
+          data: $(this).serialize(),
+          success: function (data) {
+            if (data === "success") {
+              console.log('Mensagem enviada com sucesso.');
+              // Limpa o form
+              $('.Form').trigger("reset");
+            } else {
+              console.log('Erro ao tentar enviar mensagem: ' + data);
+            }
+          }
+        });
+      }
     } else {
-      console.log('Erro ao tentar enviar mensagem. Tente novamente.');
+      console.log('Erro ao tentar enviar mensagem. Tente novamente.' + qtdErro);
     }
   });
 
@@ -135,6 +154,8 @@ $(function(){
       }
     ]
   });
+
+  $('.js-sliderBanner').slick();
 
   // SCROLLBAR
   $('.u-scrollbar').perfectScrollbar(); 

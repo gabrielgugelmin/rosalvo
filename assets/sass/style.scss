@@ -578,6 +578,10 @@ html, body {
     height: 300px;
     border-bottom: 1px solid $fuel-yellow;
 
+    img{
+      display: none;
+    }
+
     @include MQ(M){
       height: 500px;
     }

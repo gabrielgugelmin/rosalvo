@@ -16,6 +16,7 @@
   @include MQ(M){
     background-size: contain;
     background: url(../img/header.png) no-repeat center bottom;
+    border-top: 2px solid $fuel-yellow;
     box-shadow: 0;
     height: 237px;
     max-width: 1280px;
@@ -78,7 +79,6 @@
     }
 
     @include MQ(M){
-      border-top: 2px solid $fuel-yellow;
       background-position: 0 top;
       box-shadow: 0 0 10px 6px rgba(black, .45);
       height: 80px;

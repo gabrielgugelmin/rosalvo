@@ -119,8 +119,8 @@
     @include MQ(M){      
       @include transition(all .4s ease);
       @include center(x);
-      top: 32px;
-      width: auto;
+      top: 0;
+      width: 220px;
     }
   }
 

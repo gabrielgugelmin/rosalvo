@@ -176,6 +176,27 @@ $(function(){
     }
   });
 
+  if( $('#instafeed').length ){
+    var $limit;
+    if(checkWindowWidth() == 'desktop'){
+      $limit = 7;
+    } else{
+      $limit = 6;
+    }
+
+    var feed = new Instafeed({
+        accessToken: '4168706409.728edcc.16d6576a16e34d5da9357f1fd94c1e74',
+        clientId: '728edccb235240fca43a48a156daa277',
+        get: 'user',
+        limit: $limit,
+        resolution: 'low_resolution',
+        tagName: 'rosalvo',
+        template: '<a class="Instafeed__item" href="{{link}}"><div class="Instafeed__content"><span class="like">{{likes}}</span><span class="comment">{{comments}}</span></div><img src="{{image}}" /></a>',
+        userId: '4168706409'
+    });
+    feed.run();
+  }
+
 });
 
 function closeMenu(){

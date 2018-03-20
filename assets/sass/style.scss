@@ -887,3 +887,84 @@ html, body {
     text-align: right;
   }
 }
+
+.Info{
+  display: flex;
+  flex-direction: column;
+
+  @include MQ(M){
+    flex-direction: row;
+  }
+
+  &__content{
+    @include center;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &__item{
+    background-size: cover;    
+    height: 315px;
+    position: relative;
+
+    @include MQ(M){
+      flex: 1;
+    }
+
+    &::after{
+      background: rgba(#010101, .7);
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    h3{
+      color: $gray;
+      font-size: 30px;
+      font-weight: normal;
+      letter-spacing: 1.5px;
+      line-height: 1.2;
+      margin: 0 0 35px;
+      text-align: center;
+      text-transform: uppercase;
+
+      @include MQ(M){
+        font-size: 36px;
+      }
+    }
+
+    small{
+      color: $boulder;
+      display: block;
+      font-family: $open;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .u-button{
+      font-size: 24px;
+      font-weight: normal;
+      margin: 0 auto;
+      max-width: 206px;
+    }
+
+    &:nth-child(1){
+      background-image: url(../img/financiamento.jpg);
+    }
+
+    &:nth-child(2){
+      background-image: url(../img/vender.jpg);
+    }
+
+    &:nth-child(3){
+      background-image: url(../img/encontrar.jpg);
+    }
+  }
+}

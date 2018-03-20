@@ -1,0 +1,137 @@
+<section class="Detail">
+<div class="Detail__left">
+  <div class="Slider js-productSlider">
+    <?php for($i=0;$i<count($album);$i++){  ?>
+    <div class="Slider__item" style="background-image: url(<?=$URLSITE?>/assets/img/albuns/album_<?=$album[$i]->idAlbum?>/<?=$album[$i]->file?>);"></div>
+    <?php } ?>
+  </div> <!-- Slider js-slider -->
+
+  <div class="SliderNav__nav js-productNav">
+	<?php for($i=0;$i<count($album);$i++){  ?>
+    <div class="SliderNav__item" style="background-image: url(<?=$URLSITE?>/assets/img/albuns/album_<?=$album[$i]->idAlbum?>/<?=$album[$i]->file?>);"></div>
+    <?php } ?>
+  </div>
+</div> <!-- Detail__left -->
+<div class="Detail__right">
+  <h2><?=$marca->nome.' '.$rowVeiculo->modelo?></h2>
+
+  <div class="u-scrollbar">
+    <ul>
+	    
+	  <?php if($rowVeiculo->preco!=''){ ?><li>Preço: <span>R$ <?=$rowVeiculo->preco?></span></li><?php } ?>  
+      <?php if($cor->nome!=''){ ?><li>Cor: <span><?=$cor->nome?></span></li><?php } ?>
+      <?php if($rowVeiculo->anoFabricacao!=''){ ?><li>Ano de fabricação: <span><?=$rowVeiculo->anoFabricacao?></span></li><?php } ?>
+      <?php if($rowVeiculo->anoModelo!=''){ ?><li>Ano do modelo: <span><?=$rowVeiculo->anoModelo?></span></li><?php } ?>
+      <?php if($rowVeiculo->km!=''){ ?><li>Km: <span><?=$rowVeiculo->km?></span></li><?php } ?>  
+      
+      <?php if($rowVeiculo->motor!=''){ ?><li>Motor: <span><?=$rowVeiculo->motor?></span></li><?php } ?>
+      <?php if($rowVeiculo->potencia!=''){ ?><li>Potência: <span><?=$rowVeiculo->potencia?></span></li><?php } ?>
+      <?php if($rowVeiculo->aceleracao!=''){ ?><li>Aceleração: <span><?=$rowVeiculo->aceleracao?></span></li><?php } ?>
+      <?php if($rowVeiculo->airbag!=''){ ?><li>Airbag: <span><?=$rowVeiculo->airbag?></span></li><?php } ?>
+      <?php if($rowVeiculo->garantiaFabrica!=''){ ?><li>Garantia de fábrica: <span><?=$rowVeiculo->garantiaFabrica?></span></li><?php } ?>
+      
+      <?php if($combustivel->tipo!=''){ ?><li>Combustível: <span><?=$combustivel->tipo?></span></li><?php } ?>
+      <?php if($transmissao->tipo!=''){ ?><li>Transmissão: <span><?=$transmissao->tipo?></span></li><?php } ?>
+      <?php if($rowVeiculo->placa!=''){ ?><li>Placa: <span>XXX-<?=substr($rowVeiculo->placa, -4)?></span></li><?php } ?>
+      <?php if($rowVeiculo->Portas!=''){ ?><li>Portas: <span><?=$rowVeiculo->portas?></span></li><?php } ?>
+      <?php if($rowVeiculo->Motor!=''){ ?><li>Motor: <span><?=$rowVeiculo->motor?></span></li><?php } ?>
+      <?php if($rowVeiculo->multimidia!=''){ ?><li>Multimídia: <span><?=$rowVeiculo->multimidia?></span></li><?php } ?>
+      <?php if($rowVeiculo->bancos!=''){ ?><li>Bancos: <span><?=$rowVeiculo->bancos?></span></li><?php } ?>
+      <?php if($rowVeiculo->freios!=''){ ?><li>Freios: <span><?=$rowVeiculo->freios?></span></li><?php } ?>
+      <?php if($rowVeiculo->farois!=''){ ?><li>Faróis: <span><?=$rowVeiculo->farois?></span></li><?php } ?>
+      <?php if($rowVeiculo->rodas!=''){ ?><li>Rodas: <span><?=$rowVeiculo->rodas?></span></li><?php } ?>
+      <?php if($sensor->tipo!=''){ ?><li>Sensor de estacionamento: <span><?=$sensor->tipo?></span></li><?php } ?>
+      <?php if($combustivel->tipo!=''){ ?><li>Combustível: <span><?=$combustivel->tipo?></span></li><?php } ?>
+      <?php if($rowVeiculo->bluetooth=='sim'){ ?><li>Bluetooth: <span><?=$rowVeiculo->bluetooth?></span></li><?php } ?>
+      <?php if($rowVeiculo->tetoSolar=='sim' or $rowVeiculo->tetoSolar=='semipanoramico'){ ?><li>Teto Solar: <span><?=$rowVeiculo->tetoSolar?></span></li><?php } ?>
+      <?php if($rowVeiculo->conversivel=='sim'){ ?><li>Conversível: <span><?=$rowVeiculo->conversivel?></span></li><?php } ?>
+      <?php if($rowVeiculo->pilotoAutomatico=='sim'){ ?><li>Piloto Automático: <span><?=$rowVeiculo->pilotoAutomatico?></span></li><?php } ?>
+      <?php if($rowVeiculo->sensorChuva=='sim'){ ?><li>Sensor de Chuva: <span><?=$rowVeiculo->sensorChuva?></span></li><?php } ?>
+      <?php if($rowVeiculo->blindado=='sim'){ ?><li>Blindado: <span><?=$rowVeiculo->blindado?></span></li><?php } ?>
+      <?php if($rowVeiculo->observacoes=='sim'){ ?><li>Observações: <span><?=$rowVeiculo->observacoes?></span></li><?php } ?>
+     
+    </ul>
+  </div>
+
+</div>
+</section> <!-- Detail -->
+
+<div class="Proposta">
+<div class="container">
+  <h3>INTERESSADO? FAÇA UMA PROPOSTA!</h3>
+
+  <div class="Form">
+    <div class="Form__control--half" data-validate="true">
+      <input type="text" placeholder="NOME">
+      <span class="Form__required">*</span>
+    </div> <!-- Form__control -->
+    
+    <div class="Form__control--half">
+      <input type="tel" placeholder="TELEFONE">
+      <span class="Form__required">*</span>
+    </div> <!-- Form__control -->
+
+    <div class="Form__control--half" data-validate="true">
+      <input type="text" placeholder="EMAIL">
+      <span class="Form__required">*</span>
+    </div> <!-- Form__control -->
+
+    <div class="Form__control--half" data-validate="true">
+      <input type="text" placeholder="CIDADE">
+      <span class="Form__required">*</span>
+    </div> <!-- Form__control -->
+
+    <div class="Form__control" data-validate="true">
+      <textarea rows="3" cols="30" placeholder="OBS (EX: TENHO INTERESSE NO CARRO BMW...)"></textarea>
+      <span class="Form__required">*</span>
+    </div>
+
+    <div class="Form__control">
+      <a href="#/" class="u-button js-submitForm"><span>enviar</span></a>
+    </div>
+  </div> <!-- Form -->
+</div> <!-- container -->
+</div> <!-- Proposta -->
+
+<div class="Generic">
+<div class="container">
+  <h3>ou continue buscando pelo seu veículo!</h3>
+</div>
+</div> <!-- Generic -->
+
+	<section class="Grid">
+		
+		<?php
+		
+		//Seleciona veciculos destacados
+		for($i=0;$i<count($veiculosRelacionados);$i++){ 
+			
+			$rowVeiculoRel = $veiculosRelacionados[$i]; 	
+			
+			$marca = DAOFactory::getMarcaDAO()->load($rowVeiculoRel->idMarca);
+			$capa = DAOFactory::getAlbumMidiaDAO()->queryCondList(' idAlbum="'.$rowVeiculoRel->idAlbum.'" ORDER BY ordem ASC LIMIT 1 '); 
+		
+		?>
+
+			<div class="Grid__item" style="background-image: url(<?=$URLSITE?>/assets/img/albuns/album_<?=$rowVeiculoRel->idAlbum?>/<?=$capa[0]->file?>);">
+				<div class="Grid__title">
+					<h4><?=$marca->nome?> <?=$rowVeiculoRel->modelo?><small><?=$rowVeiculo->anoFabricacao?> - <?=$rowVeiculoRel->anoModelo?></small></h4>
+				</div> <!-- Grid__title -->
+		
+				<div class="Grid__buttons">
+					<a href="/estoque/<?=$rowVeiculoRel->alias?>">VER DETALHES</a>
+					<a href="/estoque/<?=$rowVeiculoRel->alias?>#proposta">FAZER PROPOSTA</a>
+				</div> <!-- Grid__buttons -->
+			</div> <!-- Grid__item -->
+
+		<?php } ?>
+	
+	</section> <!-- Grid -->
+
+	<section class="Ver">
+		<div class="container">
+			<a href="/estoque" class="u-button">
+				<span>ver estoque completo</span>
+			</a>
+		</div>
+	</section> <!-- Ver -->

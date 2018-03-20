@@ -1,0 +1,79 @@
+<section class="Banner js-sliderBanner">
+	<div class="Banner__item" style="background-image: url(assets/img/banner-estoque.png);">
+		<div class="container">
+			<div class="Banner__content">
+				<h1>Estoque</h1>
+			</div> <!-- Banner-content -->
+		</div> <!-- container -->
+	</div> <!-- Banner__item -->
+</section> <!-- Banner -->
+
+<section class="Busca" id="top">
+	<div class="container">
+		<p>busque por tipo, marca, modelo ou outros tipos de veículos</p>
+
+		<form class="Form" method="get" action="#top">
+			<div class="Form__control--search">
+				<input type="hidden" name="pg" value="0">
+				<input type="text" name="input_busca" value="<?=$valor2?>">
+			</div>
+		</form>
+	</div>
+</section> <!-- Busca -->
+
+<section class="Grid">
+	
+	<?php
+		
+		//Seleciona veciculos destacados
+		for($i=0;$i<count($veiculos);$i++){ 
+			
+			$rowVeiculo = $veiculos[$i]; 	
+			
+			$marca = DAOFactory::getMarcaDAO()->load($rowVeiculo->idMarca);
+			$capa = DAOFactory::getAlbumMidiaDAO()->queryCondList(' idAlbum="'.$rowVeiculo->idAlbum.'" ORDER BY ordem ASC LIMIT 1 '); 
+		
+	?>	
+	
+		<div class="Grid__item" style="background-image: url(<?=$URLSITE?>/assets/img/albuns/album_<?=$rowVeiculo->idAlbum?>/<?=$capa[0]->file?>);">
+			<div class="Grid__title">
+				<h4><?=$marca->nome?> <?=$rowVeiculo->modelo?><small><?=$rowVeiculo->anoFabricacao?> - <?=$rowVeiculo->anoModelo?></small></h4>
+			</div> <!-- Grid__title -->
+	
+			<div class="Grid__buttons">
+				<a href="/estoque/<?=$rowVeiculo->alias?>/<?=$rowVeiculo->idVeiculo?>">VER DETALHES</a>
+				<a href="/estoque/<?=$rowVeiculo->alias?>/<?=$rowVeiculo->idVeiculo?>#proposta">FAZER PROPOSTA</a>
+			</div> <!-- Grid__buttons -->
+		</div> <!-- Grid__item -->
+		
+		
+	<?php } ?>
+		
+</section> <!-- Grid -->
+
+<section class="Ver">
+	<div class="container">
+		
+		<!-- Pagination -->
+		<?php if($quantreg>$cont){ 
+			
+			if($acao2=='input_busca' and $valor2!=''){
+				$urlBusca = '&input_busca='.$valor2.'#top';
+			}else{
+				$urlBusca = '#top';
+			}
+		?>
+			<ul class="pagination pagination-centered">
+			<?php echo paginationSite($quantreg,$numreg,$pg,$cont,'estoque',$urlBusca); ?>
+			</ul>	
+		
+		<?php }elseif($acao2=='input_busca'){ ?>
+			
+			<a href="/estoque" class="u-button">
+				<span>ver estoque completo</span>
+			</a>
+		
+		<?php } ?>
+		
+	</div>
+</section> <!-- Ver -->

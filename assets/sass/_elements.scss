@@ -148,7 +148,10 @@
 	width: 100%;
 
 	span{
+		display: block;
+		margin-left: -5px;
 		position: relative;
+		text-align: center;
 		z-index: 1;
 	}
 

@@ -394,3 +394,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@function ls($letter-spacing, $font-size) {
+  @return ( $letter-spacing * $font-size / 1000 ) * 1px
+}

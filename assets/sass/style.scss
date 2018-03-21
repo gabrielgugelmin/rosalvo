@@ -51,12 +51,6 @@ html, body {
     height: 550px;
   }
 
-  &--internal{
-    @extend .Banner;
-
-    height: 280px;
-  }
-
   &__item{    
     background-position: center top;
     background-repeat: no-repeat;
@@ -157,6 +151,32 @@ html, body {
       //margin-top: 120px;
     }
   }
+
+  &--internal{
+    @extend .Banner;
+
+    height: 300px;
+
+    .Banner__content {
+      width: 100%;
+      left: 0;
+    }
+
+    h1 {
+      position: relative;
+      text-align: left;
+
+      &::before {
+        background-color: $fuel-yellow;
+        content: "";
+        height: 26px;
+        left: 0;
+        position: absolute;
+        top: 4px;
+        width: 4px;
+      }
+    }
+  }
 }
 
 
@@ -208,6 +228,7 @@ html, body {
 
 .Grid{
   @include clearfix;
+  background-color:$tuatara;
 
   &__item{
     background-position: left 0;
@@ -235,12 +256,12 @@ html, body {
 
     &::before {
       background: rgba(255,255,255,0);
-      background: -moz-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(0,0,0,0.6) 100%);
-      background: -webkit-gradient(left top, left bottom, color-stop(50%, rgba(255,255,255,0)), color-stop(100%, rgba(0,0,0,0.6)));
-      background: -webkit-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(0,0,0,0.6) 100%);
-      background: -o-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(0,0,0,0.6) 100%);
-      background: -ms-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(0,0,0,0.6) 100%);
-      background: linear-gradient(to bottom, rgba(255,255,255,0) 50%, rgba(0,0,0,0.6) 100%);
+      background: -moz-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(0,0,0,0.75) 100%);
+      background: -webkit-gradient(left top, left bottom, color-stop(50%, rgba(255,255,255,0)), color-stop(100%, rgba(0,0,0,0.75)));
+      background: -webkit-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(0,0,0,0.75) 100%);
+      background: -o-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(0,0,0,0.75) 100%);
+      background: -ms-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(0,0,0,0.75) 100%);
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 50%, rgba(0,0,0,0.75) 100%);
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=0 );
 
       content: "";
@@ -293,7 +314,7 @@ html, body {
   &__title{
     @include transition(all .3s ease);
 
-    bottom: 15px;
+    bottom: 0;
     color: white;
     font-family: $titillium;
     font-size: 14px;
@@ -518,6 +539,12 @@ html, body {
     li{
       display: inline-block;
       margin-right: 15px;
+      vertical-align: middle;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
     }
 
     img {
@@ -540,7 +567,7 @@ html, body {
 
   h2{
     color: $mercury;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: bold;
     letter-spacing: 1.4px;
     margin: 0 0 30px;
@@ -548,12 +575,16 @@ html, body {
     line-height: 1.2;
     text-transform: uppercase;
 
-    @include MQ(M){
-      font-size: 36px;
+    span {
+      font-weight: normal;
     }
 
     @include MQ(M){
-      font-size: 40px;
+      font-size: 32px;
+    }
+
+    @include MQ(M){
+      font-size: 36px;
     }
 
     &::after{
@@ -588,6 +619,12 @@ html, body {
       font-weight: normal;
       text-transform: capitalize;
     }
+  }
+
+  &__desc {
+    font-size: 16px;
+    color: $dusty-gray;
+    line-height: 1.5;
   }
 
   &__right{
@@ -907,12 +944,14 @@ html, body {
     background-size: cover;    
     height: 315px;
     position: relative;
+    padding: 30px;
+    text-align: center;
 
     @include MQ(M){
       flex: 1;
     }
 
-    &::after{
+    /* &::after{
       background: rgba(#010101, .7);
       content: "";
       display: block;
@@ -921,11 +960,18 @@ html, body {
       position: absolute;
       left: 0;
       top: 0;
+    } */
+
+    h3,
+    p,
+    .u-button {
+      font-family: $titillium;
+      font-weight: normal;
     }
 
     h3{
-      color: $gray;
-      font-size: 30px;
+      color: white;
+      font-size: 26px;
       font-weight: normal;
       letter-spacing: 1.5px;
       line-height: 1.2;
@@ -934,37 +980,40 @@ html, body {
       text-transform: uppercase;
 
       @include MQ(M){
-        font-size: 36px;
+        font-size: 32px;
       }
     }
 
     small{
-      color: $boulder;
+      color: white;
       display: block;
-      font-family: $open;
-      font-size: 14px;
+      //font-family: $open;
+      font-size: 16px;
       font-weight: 500;
       text-align: center;
       margin-bottom: 15px;
     }
 
     .u-button{
-      font-size: 24px;
-      font-weight: normal;
+      font-size: 16px;
+      font-weight: bold;
       margin: 0 auto;
       max-width: 206px;
     }
+  }
+}
 
-    &:nth-child(1){
-      background-image: url(../img/financiamento.jpg);
-    }
+.Geral {
+  border-top: 2px solid $fuel-yellow;
+  background-color: #2c2c2c;
+  text-align: center;
+  padding: 40px 30px;
 
-    &:nth-child(2){
-      background-image: url(../img/vender.jpg);
-    }
-
-    &:nth-child(3){
-      background-image: url(../img/encontrar.jpg);
-    }
+  h3 {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: ls(100, 22);
+    margin: 0;
   }
 }

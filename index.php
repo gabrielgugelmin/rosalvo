@@ -142,8 +142,15 @@ include_once('core/core.php');
 <body>
 	
 	<div class="PageWrapper">
+		<?php 
+			if($pagina != "") {
+				$header = 'Header--internal';
+			} else {
+				$header = 'Header';
+			}
+		?>
 		
-		<header class="Header<?=$headerType?>">
+		<header class="<?=$header?>">
 			<?php include_once('include/header.html'); ?>
 		</header> <!-- Header -->
 		

@@ -2,7 +2,7 @@
 <div class="Detail__left">
   <div class="Slider js-productSlider">
     <?php for($i=0;$i<count($album);$i++){  ?>
-    <div class="Slider__item" style="background-image: url(<?=$URLSITE?>/assets/img/albuns/album_<?=$album[$i]->idAlbum?>/<?=$album[$i]->file?>);"></div>
+    <a data-fancybox="gallery" class="Slider__item" href="<?=$URLSITE?>/assets/img/albuns/album_<?=$album[$i]->idAlbum?>/<?=$album[$i]->file?>" style="background-image: url(<?=$URLSITE?>/assets/img/albuns/album_<?=$album[$i]->idAlbum?>/<?=$album[$i]->file?>);"></a>
     <?php } ?>
   </div> <!-- Slider js-slider -->
 
@@ -13,7 +13,11 @@
   </div>
 </div> <!-- Detail__left -->
 <div class="Detail__right">
-  <h2><?=$marca->nome.' '.$rowVeiculo->modelo?></h2>
+  <h2><?=$marca->nome; ?> <span><?=$rowVeiculo->modelo; ?></span></h2>
+
+  <p class="Detail__desc">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure, reprehenderit maxime, ratione quam explicabo eius eaque labore eveniet voluptatibus aliquid inventore culpa quis? Inventore repellat tempore odio officiis culpa nihil?
+  </p>
 
   <div class="u-scrollbar">
     <ul>

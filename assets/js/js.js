@@ -1,6 +1,8 @@
 $(function(){
   clickOutsideMenu();
 
+  new WOW().init();
+
   // MENU
   // click no hamburguer icon
   $('.MenuTrigger').on('click', function(e){
@@ -176,7 +178,7 @@ $(function(){
     }
   });
 
-  if( $('#instafeed').length ){
+  /* if( $('#instafeed').length ){
     var $limit;
     if(checkWindowWidth() == 'desktop'){
       $limit = 7;
@@ -195,7 +197,7 @@ $(function(){
         userId: '4168706409'
     });
     feed.run();
-  }
+  } */
 
 });
 

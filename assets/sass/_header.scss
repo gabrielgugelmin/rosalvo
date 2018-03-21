@@ -106,11 +106,12 @@
   &__logo{
     @include transition(all .4s ease);
 
-    left: 30px;
     display: inline-block;
+    left: 30px;
     position: absolute;
     top: 38px;
     width: 120px;
+    z-index: 2;
 
     img{
       @include transition(width .4s ease);

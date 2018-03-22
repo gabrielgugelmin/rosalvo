@@ -141,15 +141,15 @@ $(function(){
     slidesToShow: 3,
     slidesToScroll: 1,
     focusOnSelect: true,
-    centerMode: true,
+    centerMode: false,
     infinite: true,
     mobileFirst: true,
     responsive: [
       {
         breakpoint: 767,
         settings: {
-          slidesToShow: 6,
-          slidesToScroll: 3,
+          slidesToShow: 4,
+          slidesToScroll: 2,
           infinite: true,
           dots: true
         }
@@ -178,7 +178,7 @@ $(function(){
     }
   });
 
-  /* if( $('#instafeed').length ){
+  if( $('#instafeed').length ){
     var $limit;
     if(checkWindowWidth() == 'desktop'){
       $limit = 7;
@@ -187,17 +187,17 @@ $(function(){
     }
 
     var feed = new Instafeed({
-        accessToken: '4168706409.728edcc.16d6576a16e34d5da9357f1fd94c1e74',
-        clientId: '728edccb235240fca43a48a156daa277',
+        accessToken: '5417155028.de1e206.770353e390c749c4af0a53bf91cab417',
+        clientId: 'de1e2068b9e34c908d25bb6db2bc21d6',
         get: 'user',
         limit: $limit,
         resolution: 'low_resolution',
         tagName: 'rosalvo',
-        template: '<a class="Instafeed__item" href="{{link}}"><div class="Instafeed__content"><span class="like">{{likes}}</span><span class="comment">{{comments}}</span></div><img src="{{image}}" /></a>',
-        userId: '4168706409'
+        template: '<a class="Instafeed__item wow fadeIn" style="background-image: url({{image}})" href="{{link}}"><div class="Instafeed__content"><span class="like">{{likes}}</span><span class="comment">{{comments}}</span></div></a>',
+        userId: '5417155028'
     });
     feed.run();
-  } */
+  }
 
 });
 

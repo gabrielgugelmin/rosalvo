@@ -12,7 +12,7 @@
     <?php } ?>
   </div>
 </div> <!-- Detail__left -->
-<div class="Detail__right">
+<div class="Detail__right wow fadeIn" data-wow-delay=".2s">
   <h2><?=$marca->nome; ?> <span><?=$rowVeiculo->modelo; ?></span></h2>
 
   <p class="Detail__desc">
@@ -62,9 +62,9 @@
 
 <div class="Proposta">
 <div class="container">
-  <h3>INTERESSADO? FAÇA UMA PROPOSTA!</h3>
+  <h3 class="wow fadeInUp" data-wow-delay=".1s">INTERESSADO? FAÇA UMA PROPOSTA!</h3>
 
-  <div class="Form">
+  <div class="Form wow fadeInUp" data-wow-delay=".3s">
     <div class="Form__control--half" data-validate="true">
       <input type="text" placeholder="NOME">
       <span class="Form__required">*</span>
@@ -117,7 +117,7 @@
 		
 		?>
 
-			<div class="Grid__item" style="background-image: url(<?=$URLSITE?>/assets/img/albuns/album_<?=$rowVeiculoRel->idAlbum?>/<?=$capa[0]->file?>);">
+			<div class="Grid__item  wow fadeIn" data-wow-delay="<?php echo '0.'.$i.'s'; ?>" style="background-image: url(<?=$URLSITE?>/assets/img/albuns/album_<?=$rowVeiculoRel->idAlbum?>/<?=$capa[0]->file?>);">
 				<div class="Grid__title">
 					<h4><?=$marca->nome?> <?=$rowVeiculoRel->modelo?><small><?=$rowVeiculo->anoFabricacao?> - <?=$rowVeiculoRel->anoModelo?></small></h4>
 				</div> <!-- Grid__title -->

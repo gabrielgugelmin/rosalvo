@@ -2,7 +2,7 @@
 	<div class="Banner__item" style="background-image: url(assets/img/banner-estoque.png);">
 		<div class="container">
 			<div class="Banner__content">
-				<h1>Estoque</h1>
+				<h1 class="wow fadeIn" data-wow-delay=".2s">Estoque</h1>
 			</div> <!-- Banner-content -->
 		</div> <!-- container -->
 	</div> <!-- Banner__item -->
@@ -15,7 +15,7 @@
 	</div> <!-- Banner__item -->
 </section> <!-- Banner -->
 
-<section class="Busca" id="top">
+<section class="Busca wow fadeIn" data-wow-delay=".3s" id="top">
 	<div class="container">
 		<p>busque por tipo, marca, modelo ou outros tipos de veículos</p>
 
@@ -42,7 +42,7 @@
 		
 	?>	
 	
-		<div class="Grid__item" style="background-image: url(<?=$URLSITE?>/assets/img/albuns/album_<?=$rowVeiculo->idAlbum?>/<?=$capa[0]->file?>);">
+		<div class="Grid__item wow fadeIn" data-wow-delay="<?php echo '0.'.$i.'s'; ?>" style="background-image: url(<?=$URLSITE?>/assets/img/albuns/album_<?=$rowVeiculo->idAlbum?>/<?=$capa[0]->file?>);">
 			<div class="Grid__title">
 				<h4><?=$marca->nome?> <?=$rowVeiculo->modelo?><small><?=$rowVeiculo->anoFabricacao?> - <?=$rowVeiculo->anoModelo?></small></h4>
 			</div> <!-- Grid__title -->

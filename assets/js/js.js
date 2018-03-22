@@ -1,6 +1,11 @@
 $(function(){
   clickOutsideMenu();
 
+<<<<<<< HEAD
+=======
+  new WOW().init();
+
+>>>>>>> 3f2067aa02ea3bd2b73c8ccf52f31eed78ee669d
   // MENU
   // click no hamburguer icon
   $('.MenuTrigger').on('click', function(e){
@@ -139,15 +144,24 @@ $(function(){
     slidesToShow: 3,
     slidesToScroll: 1,
     focusOnSelect: true,
+<<<<<<< HEAD
     centerMode: true,
+=======
+    centerMode: false,
+>>>>>>> 3f2067aa02ea3bd2b73c8ccf52f31eed78ee669d
     infinite: true,
     mobileFirst: true,
     responsive: [
       {
         breakpoint: 767,
         settings: {
+<<<<<<< HEAD
           slidesToShow: 6,
           slidesToScroll: 3,
+=======
+          slidesToShow: 4,
+          slidesToScroll: 2,
+>>>>>>> 3f2067aa02ea3bd2b73c8ccf52f31eed78ee669d
           infinite: true,
           dots: true
         }
@@ -176,6 +190,30 @@ $(function(){
     }
   });
 
+<<<<<<< HEAD
+=======
+  if( $('#instafeed').length ){
+    var $limit;
+    if(checkWindowWidth() == 'desktop'){
+      $limit = 7;
+    } else{
+      $limit = 6;
+    }
+
+    var feed = new Instafeed({
+        accessToken: '5417155028.de1e206.770353e390c749c4af0a53bf91cab417',
+        clientId: 'de1e2068b9e34c908d25bb6db2bc21d6',
+        get: 'user',
+        limit: $limit,
+        resolution: 'low_resolution',
+        tagName: 'rosalvo',
+        template: '<a class="Instafeed__item wow fadeIn" style="background-image: url({{image}})" href="{{link}}"><div class="Instafeed__content"><span class="like">{{likes}}</span><span class="comment">{{comments}}</span></div></a>',
+        userId: '5417155028'
+    });
+    feed.run();
+  }
+
+>>>>>>> 3f2067aa02ea3bd2b73c8ccf52f31eed78ee669d
 });
 
 function closeMenu(){

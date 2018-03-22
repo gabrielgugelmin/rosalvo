@@ -10,7 +10,12 @@ img{
 }
 
 body{
-  background-color: $silver-chalice;
+  //background-color: #2c2c2c;
+  background: {
+    image: url(../img/couro-pattern.jpg);
+    background-repeat: repeat;
+    background-position: 0 0;
+  }
 
   &.overflowHidden{
     overflow: hidden;
@@ -46,18 +51,31 @@ html, body {
     height: 550px;
   }
 
-  &--internal{
-    @extend .Banner;
-
-    height: 280px;
-  }
-
   &__item{    
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
     position: relative;
+
+    &::before {
+      background: rgba(255,255,255,0);
+      background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%);
+      background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0)), color-stop(100%, rgba(0,0,0,0.8)));
+      background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%);
+      background: -o-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%);
+      background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%);
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=0 );
+
+      content: "";
+      display: block;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+    }
   }
 
   &__content{
@@ -65,7 +83,7 @@ html, body {
     bottom: 10%;
     max-width: 970px;
     position: absolute;
-    width: 100%;
+    width: 90%;
 
     @include MQ(S){
       bottom: 130px;
@@ -74,7 +92,10 @@ html, body {
     @include MQ(M){
       @include transform(none);
       bottom: 80px;
-      left: 90px;
+      left: 0;
+      width: 70%;
+      right: 0;
+      margin: 0 auto;
     }
   }
 
@@ -88,10 +109,10 @@ html, body {
     line-height: 1.2;
     margin: 0 auto;
     padding-left: 20px;
-    max-width: 85%;
     position: relative;
+    text-align: center;
 
-    &::before{
+    /* &::before{
       background-color: $fuel-yellow;
       content: "";
       display: inline-block;
@@ -100,17 +121,14 @@ html, body {
       position: absolute;
       top: 0;
       width: 5px;
-    }
+    } */
 
     @include MQ(S){
       font-size: 28px;
-      text-align: left;
     }
 
     @include MQ(M){
       font-size: 34px;
-      max-width: 70%;
-      margin: 0;
     }
 
     span{
@@ -119,16 +137,44 @@ html, body {
   }
 
   .u-button{
-    margin-top: 30px;
-    padding: 14px 60px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 30px auto 0;
+    padding: 14px 15px;
 
     @include MQ(S){
-      font-size: 24px;
-      padding: 20px 80px;
+      font-size: 20px;
+      //padding: 20px 80px;
     }
 
     @include MQ(M){
-      margin-top: 120px;
+      //margin-top: 120px;
+    }
+  }
+
+  &--internal{
+    @extend .Banner;
+
+    height: 300px;
+
+    .Banner__content {
+      width: 100%;
+      left: 0;
+    }
+
+    h1 {
+      position: relative;
+      text-align: left;
+
+      &::before {
+        background-color: $fuel-yellow;
+        content: "";
+        height: 26px;
+        left: 0;
+        position: absolute;
+        top: 4px;
+        width: 4px;
+      }
     }
   }
 }
@@ -182,6 +228,7 @@ html, body {
 
 .Grid{
   @include clearfix;
+  background-color:$tuatara;
 
   &__item{
     background-position: left 0;
@@ -197,21 +244,40 @@ html, body {
     &::after{
       @include transition(all .3s ease);
 
-      background: rgba($tuatara, .58);
+      /* background: rgba($tuatara, .58);
       content: "";
       display: block;
       height: 100%;
       left: 0;
       position: absolute;
       top: 0;
+      width: 100%; */
+    }
+
+    &::before {
+      background: rgba(255,255,255,0);
+      background: -moz-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(0,0,0,0.75) 100%);
+      background: -webkit-gradient(left top, left bottom, color-stop(50%, rgba(255,255,255,0)), color-stop(100%, rgba(0,0,0,0.75)));
+      background: -webkit-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(0,0,0,0.75) 100%);
+      background: -o-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(0,0,0,0.75) 100%);
+      background: -ms-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(0,0,0,0.75) 100%);
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 50%, rgba(0,0,0,0.75) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=0 );
+
+      content: "";
+      display: block;
+      height: 100%;
+      position: absolute;
       width: 100%;
+      left: 0;
+      top: 0;
     }
 
     &:hover{
-      &::after{
+      /* &::after{
         opacity: 0;
         visibility: hidden;
-      }
+      } */
 
       .Grid__title{
         @include transform(translateY(-40px));
@@ -248,7 +314,7 @@ html, body {
   &__title{
     @include transition(all .3s ease);
 
-    bottom: 15px;
+    bottom: 0;
     color: white;
     font-family: $titillium;
     font-size: 14px;
@@ -300,7 +366,7 @@ html, body {
       display: inline-block;
       float: left;
       font-size: 14px;
-      font-weight: bold;
+      font-weight: 300;
       letter-spacing: 1px;
       line-height: 1;
       position: relative;
@@ -473,6 +539,18 @@ html, body {
     li{
       display: inline-block;
       margin-right: 15px;
+      vertical-align: middle;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+      display: block;
     }
   }
 }
@@ -489,7 +567,7 @@ html, body {
 
   h2{
     color: $mercury;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: bold;
     letter-spacing: 1.4px;
     margin: 0 0 30px;
@@ -497,12 +575,16 @@ html, body {
     line-height: 1.2;
     text-transform: uppercase;
 
-    @include MQ(M){
-      font-size: 36px;
+    span {
+      font-weight: normal;
     }
 
     @include MQ(M){
-      font-size: 40px;
+      font-size: 32px;
+    }
+
+    @include MQ(M){
+      font-size: 36px;
     }
 
     &::after{
@@ -539,6 +621,12 @@ html, body {
     }
   }
 
+  &__desc {
+    font-size: 16px;
+    color: $dusty-gray;
+    line-height: 1.5;
+  }
+
   &__right{
     padding: 30px;
     
@@ -553,19 +641,23 @@ html, body {
 
     &__left,
     &__right{
-      max-height: 711px;
+      max-height: 632px;
     }
 
     &__left{
-      width: 55%;
+      width: 60%;
     }
 
     &__right{
-      width: 45%;
+      width: 40%;
     }
 
     .u-scrollbar{
-      height: calc(711px - 148px);
+      height: calc(632px - 398px);
+
+      @include MQ(M) {
+        height: calc(632px - 268px);
+      }
     }
   }
 }
@@ -583,11 +675,11 @@ html, body {
     }
 
     @include MQ(M){
-      height: 500px;
+      height: 380px;
     }
 
     @include MQ(L){
-      height: 610px;
+      height: 440px;
     }
   }
 
@@ -835,4 +927,201 @@ html, body {
   &-right{
     text-align: right;
   }
+}
+
+.More{
+  display: flex;
+  flex-direction: column;
+
+  @include MQ(S){
+    flex-direction: row;
+  }
+
+  &__content{
+    @include center;
+    padding: 30px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &__item{
+    background-size: cover;    
+    height: 315px;
+    position: relative;
+    text-align: center;
+
+    @include MQ(S){
+      flex: 1;
+    }
+
+    /* &::after{
+      background: rgba(#010101, .7);
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    } */
+
+    h3,
+    p,
+    .u-button {
+      font-family: $titillium;
+      font-weight: normal;
+    }
+
+    h3{
+      color: white;
+      font-size: 26px;
+      font-weight: normal;
+      letter-spacing: 1.5px;
+      line-height: 1.2;
+      margin: 0 0 35px;
+      text-align: center;
+      text-transform: uppercase;
+
+      @include MQ(M){
+        font-size: 32px;
+      }
+    }
+
+    small{
+      color: white;
+      display: block;
+      //font-family: $open;
+      line-height: 1.4;
+      font-size: 16px;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .u-button{
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0 auto;
+      max-width: 206px;
+    }
+  }
+}
+
+.Geral {
+  border-top: 2px solid $fuel-yellow;
+  background-color: #2c2c2c;
+  text-align: center;
+  padding: 40px 30px;
+
+  h3 {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: ls(100, 22);
+    margin: 0;
+  }
+}
+
+.Instafeed{
+	background-color: #2c2c2c;
+
+	&__item{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    height: 182px;
+    overflow: hidden;
+    position: relative;
+    width: calc(100% / 2);
+
+		img{
+			@include center;
+			position: absolute;
+			height: 100%;
+			max-width: inherit;
+		}
+
+		@include MQ(S){
+      height: 280px;
+      width: calc(100% / 3);
+    }
+    
+		@include MQ(M){
+			width: calc(100% / 7);
+		}
+
+		&::before{
+			@include transition(opacity .3s ease);
+			background: black;
+			content: "";
+			display: block;
+			height: 100%;
+			left: 0;
+			opacity: .4;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: 1;
+		}
+
+		&:hover{
+			&::before{
+				opacity: 0;
+			}
+
+			span{
+				text-shadow: 1px 1px 3px rgba(black, .8);
+			}
+		}
+	}
+
+	&__content{
+		@include center;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+		z-index: 1;
+	}
+
+	span{
+		color: $athens-gray;
+		display: block;
+		font-size: 15px;
+		font-weight: 900;
+		margin: 5px 0;
+
+		@include MQ(M){
+			display: inline-block;
+
+			&:last-child{
+				margin-left: 25px;
+			}
+		}		
+
+		&::after{
+			content: "";
+			background-position: 0 0;
+			background-repeat: no-repeat;
+			background-size: contain;
+			display: inline-block;
+			height: 16px;
+			margin-left: 5px;
+			vertical-align: middle;
+			width: 16px;
+		}
+
+		&.comment{
+			&::after{
+				background-image: url(../img/icons/comment.svg);
+			}
+		}
+
+		&.like{
+			&::after{
+				background-image: url(../img/icons/like.svg);
+			}
+		}
+	}
 }

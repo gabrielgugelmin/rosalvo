@@ -148,7 +148,14 @@
 	width: 100%;
 
 	span{
+<<<<<<< HEAD
 		position: relative;
+=======
+		display: block;
+		margin-left: -5px;
+		position: relative;
+		text-align: center;
+>>>>>>> 3f2067aa02ea3bd2b73c8ccf52f31eed78ee669d
 		z-index: 1;
 	}
 

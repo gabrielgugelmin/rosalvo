@@ -1,0 +1,112 @@
+<section class="Banner js-sliderBanner">
+	<div class="Banner__item" style="background-image: url(assets/img/banner.jpg);">
+		<div class="container">
+			<div class="Banner__content">
+				<h1 class="wow fadeIn">Lorem <span>Ipsum</span> é simplesmente uma simulação de texto</h1>
+			</div> <!-- Banner-content -->
+		</div> <!-- container -->
+	</div> <!-- Banner__item -->
+
+	<div class="Banner__item" style="background-image: url(assets/img/banner.jpg);">
+		<div class="container">
+			<div class="Banner__content">
+				<h1>Lorem <span>Ipsum</span> é simplesmente uma simulação de texto 2</h1>
+			</div> <!-- Banner-content -->
+		</div> <!-- container -->
+	</div> <!-- Banner__item -->
+
+	<div class="Banner__item" style="background-image: url(assets/img/banner.jpg);">
+		<div class="container">
+			<div class="Banner__content">
+				<h1>Lorem <span>Ipsum</span> é simplesmente uma simulação de texto 3</h1>
+			</div> <!-- Banner-content -->
+		</div> <!-- container -->
+	</div> <!-- Banner__item -->
+</section> <!-- Banner -->
+
+<section class="Busca">
+	<div class="container wow fadeIn" data-wow-delay="0.2s">
+		<p>busque por tipo, marca, modelo ou outros tipos de veículos</p>
+
+		<form class="Form" action="estoque" method="get">
+			<div class="Form__control--search">
+				<input type="hidden" name="pg" value="0">
+				<input type="text" name="input_busca" value="<?=$valor2?>">
+			</div>
+		</form>
+	</div>
+</section> <!-- Busca -->
+
+<section class="Grid" id="estoque">
+	
+	<?php
+		
+		//Seleciona veciculos destacados
+		$veiculoHome = DAOFactory::getVeiculoDAO()->queryCondList(' status="2" ORDER BY idVeiculo DESC LIMIT 12 ');
+		for($i=0;$i<count($veiculoHome);$i++){ 
+			
+			$rowVeiculoHome = $veiculoHome[$i]; 	
+			
+			$marca = DAOFactory::getMarcaDAO()->load($rowVeiculoHome->idMarca);
+			$capa = DAOFactory::getAlbumMidiaDAO()->queryCondList(' idAlbum="'.$rowVeiculoHome->idAlbum.'" ORDER BY ordem ASC LIMIT 1 '); 
+		
+	?>	
+	
+		<div class="Grid__item wow fadeIn" data-wow-delay="<?php echo '0.'.$i.'s'; ?>" style="background-image: url(<?=$URLSITE?>/assets/img/albuns/album_<?=$rowVeiculoHome->idAlbum?>/<?=$capa[0]->file?>);">
+			<div class="Grid__title">
+				<h4><?=$marca->nome?> <?=$rowVeiculoHome->modelo?><small><?=$rowVeiculoHome->anoFabricacao?> - <?=$rowVeiculoHome->anoModelo?></small></h4>
+			</div> <!-- Grid__title -->
+	
+			<div class="Grid__buttons">
+				<a href="/estoque/<?=$rowVeiculoHome->alias?>/<?=$rowVeiculoHome->alias?>">VER DETALHES</a>
+				<a href="/estoque/<?=$rowVeiculoHome->alias?>/<?=$rowVeiculoHome->alias?>#proposta">FAZER PROPOSTA</a>
+			</div> <!-- Grid__buttons -->
+		</div> <!-- Grid__item -->
+
+		
+	<?php } ?>
+		
+</section> <!-- Grid -->
+
+<section class="Ver">
+	<div class="container">
+		<a href="/estoque" class="u-button wow fadeIn" data-wow-delay="0.4s">
+			<span>ver estoque completo</span>
+		</a>
+	</div>
+</section> <!-- Ver -->
+
+<section id="servicos" class="More">
+	<div class="More__item wow fadeIn" style="background-image: url(assets/img/solicitar.jpg);">
+		<div class="More__content">
+			<h3>NÃO ENCONTROU?</h3>
+			<small>Envie seus dados de contato e informações do veículo que procura.</small>
+			<a href="#contato" class="js-scroll u-button wow fadeInUp"><span>solicitar</span></a>
+		</div> <!-- Info__content -->
+	</div> <!-- Info__item -->
+
+	<div class="More__item wow fadeIn" data-wow-delay=".2s" style="background-image: url(assets/img/avaliar.jpg);">
+		<div class="More__content">
+			<h3>VENDA SEU VEÍCULO</h3>
+			<small>Compramos seu veículo com pagamento à vista ou vendemos para você.</small>
+			<a href="#contato" class="js-scroll u-button wow fadeInUp" data-wow-delay=".3s"><span>avaliar</span></a>
+		</div> <!-- Info__content -->
+	</div> <!-- Info__item -->
+
+	<div class="More__item wow fadeIn" data-wow-delay=".4s" style="background-image: url(assets/img/simular.jpg);">
+		<div class="More__content">
+			<h3>DESEJA FINANCIAR</h3>
+			<small>Entre em contato e simule um financiamento para comprar seu veículo.</small>
+			<a href="#contato" class="js-scroll u-button wow fadeInUp" data-wow-delay=".5s"><span>simular</span></a>
+		</div> <!-- Info__content -->					
+	</div> <!-- Info__item -->
+	</section>
+
+<section class="Geral">
+	<div class="container">
+			<h3 class="wow fadeIn">CONFIRA NOSSO PERFIL NO INSTAGRAM</h3>
+	</div>
+</section>
+
+<section id="instafeed" class="Instafeed">
+</section>

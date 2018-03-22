@@ -393,4 +393,11 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+<<<<<<< HEAD
+=======
+}
+
+@function ls($letter-spacing, $font-size) {
+  @return ( $letter-spacing * $font-size / 1000 ) * 1px
+>>>>>>> 3f2067aa02ea3bd2b73c8ccf52f31eed78ee669d
 }

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 	
 /**
  * Inffus Web Intelligence
@@ -10,7 +10,7 @@
 */
 
 //Inicia sessions
-session_start();
+//session_start();
 
 require_once('application/include_dao.php');
 
@@ -28,7 +28,6 @@ if(!file_exists('templates/class/dao/sql/ConnectionProperty.class.php')){ header
 include_once('core/core.php');
 
 ?>
-
 <html lang="pr-BR">
 <head>
 	<meta charset="UTF-8">
@@ -65,14 +64,13 @@ include_once('core/core.php');
 	<link rel="stylesheet" href="assets/css/slick-theme.css"> 
 	-->
 	<link rel="stylesheet" href="<?=$URLSITE?>/assets/css/style.min.css">
+	<link rel="stylesheet" href="<?=$URLSITE?>/assets/css/temp.css">
 	
 	<!-- FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
 	
 	<style>
-		body {
-/* 		    background-color: #525251; */
-	    }
+
 		.pagination {
 		  height: 36px;
 		  margin: 18px 0;

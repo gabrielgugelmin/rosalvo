@@ -49,7 +49,7 @@
 	<?php
 		
 		//Seleciona veciculos destacados
-		$veiculoHome = DAOFactory::getVeiculoDAO()->queryCondList(' status="2" ORDER BY idVeiculo DESC LIMIT 12 ');
+		$veiculoHome = DAOFactory::getVeiculoDAO()->queryCondList(' status="1" ORDER BY idVeiculo DESC LIMIT 12 ');
 		for($i=0;$i<count($veiculoHome);$i++){ 
 			
 			$rowVeiculoHome = $veiculoHome[$i]; 	
@@ -65,8 +65,8 @@
 			</div> <!-- Grid__title -->
 	
 			<div class="Grid__buttons">
-				<a href="/estoque/<?=$rowVeiculoHome->alias?>/<?=$rowVeiculoHome->alias?>">VER DETALHES</a>
-				<a href="/estoque/<?=$rowVeiculoHome->alias?>/<?=$rowVeiculoHome->alias?>#proposta">FAZER PROPOSTA</a>
+				<a href="/estoque/<?=$rowVeiculoHome->alias?>/<?=$rowVeiculoHome->idVeiculo?>">VER DETALHES</a>
+				<a href="/estoque/<?=$rowVeiculoHome->alias?>/<?=$rowVeiculoHome->idVeiculo?>#proposta">FAZER PROPOSTA</a>
 			</div> <!-- Grid__buttons -->
 		</div> <!-- Grid__item -->
 

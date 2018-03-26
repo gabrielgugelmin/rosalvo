@@ -64,7 +64,6 @@ include_once('core/core.php');
 	<link rel="stylesheet" href="assets/css/slick-theme.css"> 
 	-->
 	<link rel="stylesheet" href="<?=$URLSITE?>/assets/css/style.min.css">
-	<link rel="stylesheet" href="<?=$URLSITE?>/assets/css/temp.css">
 	
 	<!-- FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">

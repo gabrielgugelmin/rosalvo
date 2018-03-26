@@ -1,0 +1,22 @@
+.Detail .u-scrollbar {
+  max-height: calc(100% - 110px);
+}
+
+@media only screen and (min-width: 991px) {
+  .Detail .u-scrollbar {
+    max-height: calc(100% - 720px);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .Detail .u-scrollbar {
+    max-height: calc(100% - 450px);
+  }
+}
+
+.Banner h1 {
+  font-family: 'Titillium';
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}

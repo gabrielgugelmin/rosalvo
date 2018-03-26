@@ -143,7 +143,8 @@ html, body {
     padding: 14px 15px;
 
     @include MQ(S){
-      font-size: 20px;
+      font-size: 16px;
+      max-width: 370px;
       //padding: 20px 80px;
     }
 
@@ -236,7 +237,7 @@ html, body {
     background-size: cover;
     border-bottom: 1px solid $fuel-yellow;
     float: left;
-    height: 320px;
+    height: 245px;
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -591,7 +592,7 @@ html, body {
       content: "";
       height: 1px;
       width: 100%;
-      background-color: $fuel-yellow;
+      background-color: #796434;
       bottom: -10px;
       position: absolute;
       display: block;
@@ -631,17 +632,21 @@ html, body {
     padding: 30px;
     
     @include MQ(M){
-      padding: 30px 60px;
+      padding: 30px 60px 0 30px;
     }
   }
 
   @include MQ(M){
-    display: flex;
     @include clearfix;
+    //display: flex;
+    display: block;
+    
 
     &__left,
     &__right{
-      max-height: 632px;
+      // max-height: 547px;
+      display: inline-block;
+      float: left;
     }
 
     &__left{
@@ -653,16 +658,23 @@ html, body {
     }
 
     .u-scrollbar{
-      height: calc(632px - 398px);
+      // height: calc(547px - 330px);
+      // height: 80%;
 
       @include MQ(M) {
-        height: calc(632px - 268px);
+        height: calc(100% - 420px);
+      }
+      
+      @include MQ(L) {
+        height: calc(100% - 110px);
       }
     }
   }
 }
 
 .Slider{
+  margin-bottom: 0 !important;
+
   &__item{
     background-position: center bottom;
     background-size: cover;
@@ -675,11 +687,11 @@ html, body {
     }
 
     @include MQ(M){
-      height: 380px;
+      height: 440px;
     }
 
     @include MQ(L){
-      height: 440px;
+      height: 550px;
     }
   }
 
@@ -809,7 +821,6 @@ html, body {
     padding: 30px 12%;
 
     .u-button{
-      color: #7d7d7c;
       float: right;
       max-width: 150px;
       padding: 0;
@@ -942,29 +953,19 @@ html, body {
     padding: 30px;
     position: absolute;
     width: 100%;
+    height: 100%;
     z-index: 1;
   }
 
   &__item{
     background-size: cover;    
-    height: 315px;
+    height: 360px;
     position: relative;
     text-align: center;
 
     @include MQ(S){
       flex: 1;
     }
-
-    /* &::after{
-      background: rgba(#010101, .7);
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
-    } */
 
     h3,
     p,
@@ -991,25 +992,29 @@ html, body {
     small{
       color: white;
       display: block;
-      //font-family: $open;
+      font-family: $titillium;
       line-height: 1.4;
       font-size: 16px;
       font-weight: 500;
       text-align: center;
-      margin-bottom: 15px;
+      margin-bottom: 45px;
     }
 
     .u-button{
+      bottom: 70px;
       font-size: 16px;
       font-weight: bold;
+      left: 0;
       margin: 0 auto;
-      max-width: 206px;
+      max-width: 190px;
+      position: absolute;
+      right: 0;
     }
   }
 }
 
 .Geral {
-  border-top: 2px solid $fuel-yellow;
+  border-top: 1px solid $fuel-yellow;
   background-color: #2c2c2c;
   text-align: center;
   padding: 40px 30px;

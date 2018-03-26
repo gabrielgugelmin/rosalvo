@@ -128,6 +128,7 @@ $(function(){
 
   $('.js-productSlider').slick({
     slidesToShow: 1,
+    dots: false,
     slidesToScroll: 1,
     asNavFor: '.SliderNav__nav',
     prevArrow: '<button type="button" class="Slider__button Slider__button--prev"></button>',
@@ -137,6 +138,7 @@ $(function(){
 
   $('.js-productNav').slick({
     arrows: false,
+    dots: false,
     asNavFor: '.Slider',
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -151,7 +153,7 @@ $(function(){
           slidesToShow: 4,
           slidesToScroll: 2,
           infinite: true,
-          dots: true
+          dots: false
         }
       }
     ]

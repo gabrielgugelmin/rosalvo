@@ -132,7 +132,7 @@
 .u-button{
 	background-color: white;
 	border: 0;
-	color: $tuatara;
+	color: #7d7d7c;
 	display: block;
 	font-family: $titillium;
 	font-size: 16px;
@@ -141,7 +141,7 @@
 	line-height: 48px;
 	letter-spacing: 1.5px;
 	max-width: 370px;
-	padding-left: 10%;
+	padding: 0;
 	position: relative;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -153,10 +153,6 @@
 		position: relative;
 		text-align: center;
 		z-index: 1;
-	}
-
-	@include MQ(M){
-		padding-left: 6%;
 	}
 
 	&::before{

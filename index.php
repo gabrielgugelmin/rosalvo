@@ -9,9 +9,6 @@
  * @link http://www.rosalvoautomoveis.com.br
 */
 
-//Inicia sessions
-//session_start();
-
 require_once('application/include_dao.php');
 
 /**
@@ -199,7 +196,17 @@ include_once('core/core.php');
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvBSmIKF5wjBmejyKIbVDXBQ5l9-xpQVU"></script>
 	
 	<script src="/assets/js/jquery.min.js"></script>
-	<script src="/assets/js/js.min.js"></script>
+	<script src="/assets/js/jquery.fancybox.min.js"></script>
+	<script src="/assets/js/perfect-scrollbar.jquery.min.js"></script>
+	<script src="/assets/js/slick.min.js"></script>
+	<script src="/assets/js/instafeed.min.js"></script>
+	<script src="/assets/js/slick.min.js"></script>
+	<script src="/assets/js/wow.min.js"></script>
+	<script src="/assets/js/jquery.mask.min.js"></script>
+	<script src="/assets/js/slick.min.js"></script>
+	
+	
+	<script src="/assets/js/js.js"></script>
 
 	<?php if($siteAnalytics!=''){ ?>
 	

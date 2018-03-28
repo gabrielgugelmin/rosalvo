@@ -41,6 +41,30 @@ $(function(){
     }
   });
 
+  // máscaras
+
+  var telefone = function (val) {
+    return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+  },
+  options = {onKeyPress: function(val, e, field, options) {
+          field.mask(telefone.apply({}, arguments), options);
+      }
+  };
+
+  var cpfCnpj = {
+    onKeyPress: function (cpf, ev, el, op) {
+      var masks = ['000.000.000-000', '00.000.000/0000-00'],
+        mask = (cpf.length > 14) ? masks[1] : masks[0];
+      el.mask(mask, op);
+    }
+  }
+
+  $('.js-cpf-cnpj').mask('000.000.000-000', cpfCnpj);
+  $('.js-phone').mask(telefone, options);
+  $('.js-km').mask('000.000.000.000.000', {reverse: true});
+  $('.js-placa').mask('AAA-0000');
+  $('.js-money').mask('000.000.000.000.000,00', {reverse: true});
+
 
   // validar formulario
 /*

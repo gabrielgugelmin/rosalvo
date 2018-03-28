@@ -10,40 +10,42 @@
 	<div class="Info__right wow fadeIn" data-wow-delay=".2s">
 		<div class="Contato">
 			<div class="container">
-				<h5>ENTRE EM CONTATO: COMPRE,<br>VENDA OU NEGOCIE COM A GENTE</h5>
+				<h5>FALE CONOSCO</h5>
 				<p>Não encontrou o veículo que estava procurando? Ou precisa vender seu veículo? Entre em contato pelo formulário e informe o que precisa que a Rosalvo  entra em contato com você.</p>
 
-				<form action="" class="Form">
+				<form id="formContato" method="post" action="" class="Form">
+					
 					<div class="Form__control" data-validate="true">
-						<input type="text" placeholder="NOME">
+						<input type="text" name="nome" placeholder="NOME">
 						<span class="Form__required">*</span>
 					</div> <!-- Form__control -->
 					
 					<div class="Form__control" data-validate="true">
-						<input type="text" placeholder="EMAIL">
+						<input type="text" name="email" placeholder="EMAIL">
 						<span class="Form__required">*</span>
 					</div> <!-- Form__control -->
 
 					<div class="Form__control">
-						<input type="tel" placeholder="TELEFONE">
+						<input type="tel" name="telefone" placeholder="TELEFONE">
 						<span class="Form__required">*</span>
 					</div> <!-- Form__control -->
 
 					<div class="Form__control" data-validate="true">
-						<textarea name="mensagem" placeholder="MODELO"></textarea>
+						<textarea name="mensagem" placeholder="DEIXE SUA MENSAGEM"></textarea>
 						<span class="Form__required">*</span>
 					</div> <!-- Form__control -->
-
 					
 						<div class="Form__control--half Form__control--no-border">
-							<input type="checkbox" id="checkbox_newsletter">
+							<input type="checkbox" name="newsletter" id="checkbox_newsletter">
 							<label for="checkbox_newsletter">NEWSLETTER</label>
 						</div>
 
 						<div class="Form__control--half">
-							<a href="#/" class="u-button u-button--small js-submitForm"><span>enviar</span></a>
+<!-- 							<a href="#/" class="u-button u-button--small js-submitForm"><span>enviar</span></a> -->
+							<input type="submit" class="u-button u-button--small js-submitForm" value="enviar">
 						</div>
 				</form>
+				
 			</div>
 		</div> <!-- Contato -->
 	</div>

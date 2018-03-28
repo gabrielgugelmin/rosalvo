@@ -43,6 +43,7 @@ $(function(){
 
 
   // validar formulario
+/*
   $('.js-submitForm').on('click', function (e) {
     var form = $(this).attr('id');
 
@@ -94,6 +95,232 @@ $(function(){
       console.log('Erro ao tentar enviar mensagem. Tente novamente.' + qtdErro);
     }
   });
+*/
+  
+  	/* FORM CONTATO */
+	$('#formContato').submit(function(e){ 
+	    
+	    e.preventDefault();
+	    var qtdErro = 0;
+	
+	    	$(this).find('[data-validate=true]').each(function() {
+				var value = $.trim($(this).find('input, textarea, select').val());
+				if(!value.length > 0){
+					$(this).addClass('error');
+					qtdErro++;
+				}else{
+					$(this).removeClass('error');
+				}
+			}); 
+		
+			if(qtdErro == 0){
+				return $.ajax({
+					type: "POST",
+					url: "/ajax/contacto.php",
+					data: $(this).serialize(),
+					success: function(data) {
+					if (data === "success") {
+						alert('Mensagem enviada com sucesso.');
+			 			// Limpa o form
+			 			$('#formContato').trigger("reset");
+					} else {
+					  alert('Erro ao tentar enviar mensagem: '+data);
+					}
+					}
+				});
+			}else{
+				alert('Erro ao tentar enviar mensagem. Tente novamente.');
+			}
+	
+	});
+	
+	
+	/* FORM CONTATO */
+	$('#formContato').submit(function(e){ 
+	    
+	    e.preventDefault();
+	    var qtdErro = 0;
+	
+	    	$(this).find('[data-validate=true]').each(function() {
+				var value = $.trim($(this).find('input, textarea').val());
+				if(!value.length > 0){
+					$(this).addClass('error');
+					qtdErro++;
+				}else{
+					$(this).removeClass('error');
+				}
+			}); 
+		
+			if(qtdErro == 0){
+				return $.ajax({
+					type: "POST",
+					url: "/ajax/contacto.php",
+					data: $(this).serialize(),
+					success: function(data) {
+					if (data === "success") {
+						alert('Mensagem enviada com sucesso.');
+			 			// Limpa o form
+			 			$('#formContato').trigger("reset");
+					} else {
+					  alert('Erro ao tentar enviar mensagem: '+data);
+					}
+					}
+				});
+			}else{
+				alert('Erro ao tentar enviar mensagem. Tente novamente.');
+			}
+	
+	});
+	
+	
+	/* FORM CONTATO */
+	$('#FormConsignacao').submit(function(e){ 
+	    
+	    e.preventDefault();
+	    var qtdErro = 0;
+	
+	    	$(this).find('[data-validate=true]').each(function() {
+				var value = $.trim($(this).find('input, textarea').val());
+				if(!value.length > 0){
+					$(this).addClass('error');
+					qtdErro++;
+				}else{
+					$(this).removeClass('error');
+				}
+			}); 
+		
+			if(qtdErro == 0){
+				return $.ajax({
+					type: "POST",
+					url: "/ajax/consignacao.php",
+					data: $(this).serialize(),
+					success: function(data) {
+					if (data === "success") {
+						alert('Mensagem enviada com sucesso.');
+			 			// Limpa o form
+			 			$('#formContato').trigger("reset");
+					} else {
+					  alert('Erro ao tentar enviar mensagem: '+data);
+					}
+					}
+				});
+			}else{
+				alert('Erro ao tentar enviar mensagem. Tente novamente.');
+			}
+	
+	});
+	
+	
+	/* FORM CONTATO */
+	$('#FormFinanciamento').submit(function(e){ 
+	    
+	    e.preventDefault();
+	    var qtdErro = 0;
+	
+	    	$(this).find('[data-validate=true]').each(function() {
+				var value = $.trim($(this).find('input, textarea').val());
+				if(!value.length > 0){
+					$(this).addClass('error');
+					qtdErro++;
+				}else{
+					$(this).removeClass('error');
+				}
+			}); 
+		
+			if(qtdErro == 0){
+				return $.ajax({
+					type: "POST",
+					url: "/ajax/financiamento.php",
+					data: $(this).serialize(),
+					success: function(data) {
+					if (data === "success") {
+						alert('Mensagem enviada com sucesso.');
+			 			// Limpa o form
+			 			$('#formContato').trigger("reset");
+					} else {
+					  alert('Erro ao tentar enviar mensagem: '+data);
+					}
+					}
+				});
+			}else{
+				alert('Erro ao tentar enviar mensagem. Tente novamente.');
+			}
+	
+	});
+	
+	/* FORM CONTATO */
+	$('#FormInteresse').submit(function(e){ 
+	    
+	    e.preventDefault();
+	    var qtdErro = 0;
+	
+	    	$(this).find('[data-validate=true]').each(function() {
+				var value = $.trim($(this).find('input, textarea').val());
+				if(!value.length > 0){
+					$(this).addClass('error');
+					qtdErro++;
+				}else{
+					$(this).removeClass('error');
+				}
+			}); 
+		
+			if(qtdErro == 0){
+				return $.ajax({
+					type: "POST",
+					url: "/ajax/interesse.php",
+					data: $(this).serialize(),
+					success: function(data) {
+					if (data === "success") {
+						alert('Mensagem enviada com sucesso.');
+			 			// Limpa o form
+			 			$('#formContato').trigger("reset");
+					} else {
+					  alert('Erro ao tentar enviar mensagem: '+data);
+					}
+					}
+				});
+			}else{
+				alert('Erro ao tentar enviar mensagem. Tente novamente.');
+			}
+	
+	});
+	
+	/* FORM CONTATO */
+	$('#FormProposta').submit(function(e){ 
+	    
+	    e.preventDefault();
+	    var qtdErro = 0;
+	
+	    	$(this).find('[data-validate=true]').each(function() {
+				var value = $.trim($(this).find('input, textarea').val());
+				if(!value.length > 0){
+					$(this).addClass('error');
+					qtdErro++;
+				}else{
+					$(this).removeClass('error');
+				}
+			}); 
+		
+			if(qtdErro == 0){
+				return $.ajax({
+					type: "POST",
+					url: "/ajax/proposta.php",
+					data: $(this).serialize(),
+					success: function(data) {
+					if (data === "success") {
+						alert('Mensagem enviada com sucesso.');
+			 			// Limpa o form
+			 			$('#formContato').trigger("reset");
+					} else {
+					  alert('Erro ao tentar enviar mensagem: '+data);
+					}
+					}
+				});
+			}else{
+				alert('Erro ao tentar enviar mensagem. Tente novamente.');
+			}
+	
+	});
 
 
   // MAPS
@@ -159,7 +386,11 @@ $(function(){
     ]
   });
 
-  $('.js-sliderBanner').slick();
+  $('.js-sliderBanner').slick({
+    infinite:false,
+    dots: false,
+    autoplay: true
+  });
 
   // SCROLLBAR
   $('.u-scrollbar').perfectScrollbar();

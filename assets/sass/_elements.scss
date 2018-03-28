@@ -25,7 +25,8 @@
 			input[type="text"],
 			input[type="email"],
 			input[type="tel"],
-			textarea {
+			textarea,
+			select {
 				border-color: #cf3a3a;
 
 				&:focus{
@@ -103,10 +104,11 @@
 	input[type='text'],
 	input[type='email'],
 	input[type='tel'],
-	textarea {
+	textarea,
+	select {
 		@include transition(color, .6s, ease, box-shadow, .4s, linear);
 		@include placeholder() {
-			color: #646464;
+			color: $athens-gray;
 		};
 		
     background-color: transparent;
@@ -118,7 +120,7 @@
 		line-height: 1.5;
     font-size: 12px;
     height: 43px;
-    padding: 0 15px;
+		padding: 0 15px;
 
 		&:focus{
 			border-color: $fuel-yellow;
@@ -131,10 +133,31 @@
 		}
 	}
 
+	select {
+		text-transform: uppercase;
+		width: 100%;
+
+		option {
+			background-color: $tuatara;
+			color: white;
+		}
+	}
+
 	textarea {
 		resize: none;
 		height: auto;
 		padding: 15px;
+	}
+
+	input[type='submit'] {
+		@include transition(all .5s ease);
+
+		border-left: 5px solid $fuel-yellow;
+
+		&:hover {
+			background-color: $fuel-yellow;
+			cursor: pointer;
+		}
 	}
 
 

@@ -110,9 +110,20 @@
     @include MQ(M){
       display: block;
     }
+
+    &--mob {
+      width: 120px;
+      margin-top: 30px;
+      display: inline-block;
+      
+      @include MQ(M) {
+        display: none;
+      }
+    }
   }
 
   &__img--small {
+    display: none;
     margin: 0 auto;
 
     @include MQ(M){
